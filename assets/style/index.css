@@ -128,6 +128,7 @@ a {
 body {
   background-color: #1d1d1d;
   color: #fff;
+  text-align: center;
 }
 
 section {
@@ -160,24 +161,47 @@ select {
 .shapes {
   background-color: #000;
   width: 100rem;
-  height: 80rem;
+  height: 70rem;
   border: var(--app-border);
   border-radius: var(--app-border-radius);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  place-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 16rem;
+  padding: 2rem;
+  gap: 1rem;
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.shapes > div {
+  grid-column: span 1;
+  grid-row: span 1;
+  opacity: 0; 
+  animation: fadeInFromTop 0.5s ease-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .circle {
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   background-color: white;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .square {
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   background-color: white;
+  cursor: pointer;
 }
-

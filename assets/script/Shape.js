@@ -24,7 +24,20 @@ class Shape {
   }
 
   getInfo() {
-    return `${this.color} ${this.shape}`;
+    // Getting and storing the section shape-info
+    const shapeInfoSection = document.querySelector(".shape-info");
+
+    // Creating a paragraph
+    const paragraph = document.createElement("p");
+
+    // Filling the paragraph with content
+    paragraph.textContent = `${this.shape} ${this.color}`;
+
+    // Clearing the section shape-info
+    shapeInfoSection.innerHTML = "";
+
+    // Appending the paragraph to the section shape-info
+    shapeInfoSection.appendChild(paragraph);
   }
 }
 

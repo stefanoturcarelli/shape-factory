@@ -16,23 +16,42 @@ const shapesContainer = select(".shapes");
 const createBtn = select(".create");
 const shapeSelector = select(".shape-selector");
 const colorSelector = select(".color-selector");
+const shapeInfoSection = select(".shape-info");
+
+const shapesArray = [];
+
+let numberOfShapes = 0;
 
 function createShape() {
-  // Create and append to the grid box
-  let newDiv = create("div");
+  if (numberOfShapes < 24) {
+    // Create and append to the grid box
+    let newDiv = create("div");
+    // Getting the selected shape and color from the dropdowns
+    const selectedShape = shapeSelector.value;
+    const selectedColor = colorSelector.value;
 
-  const selectedShape = shapeSelector.value;
-  const selectedColor = colorSelector.value;
+    // Setting the selected shape and color to the new div
+    newDiv.classList.add(selectedShape);
+    newDiv.style.backgroundColor = `#${selectedColor}`;
 
-  newDiv.classList.add(selectedShape);
+    // Increase the numnber of shapes
+    numberOfShapes++;
 
-  newDiv.style.backgroundColor = `#${selectedColor}`;
+    // Appending the new div to the grid container
+    shapesContainer.appendChild(newDiv);
 
-  shapesContainer.appendChild(newDiv);
+    // Using the Shape class to create a new Shape object
+    const shape = new Shape(selectedShape, selectedColor);
 
-  const shape = new Shape(selectedShape, selectedColor);
+    // Storing the new shape inside an array
+    shapesArray.push(shape);
 
-  shapesArray.push(shape);
+    onEvent("click", newDiv, () => {
+      shape.getInfo();
+    });
+  } else {
+    shapeInfoSection.innerHTML = "<p>Storage Full</p>";
+  }
 }
 
 onEvent("click", createBtn, () => {
@@ -41,5 +60,3 @@ onEvent("click", createBtn, () => {
   // Save the new object in an array
   // Add a new shape (div) to the grid
 });
-
-const shapesArray = [];
