@@ -1,10 +1,14 @@
+let shapeCount = 0;
+
 class Shape {
   _shape;
   _color;
+  _id;
 
-  constructor(shape = "circle", color = "blue") {
+  constructor(shape, color, id) {
     this.shape = shape;
     this.color = color;
+    this.id = ++shapeCount;
   }
 
   set shape(shape) {
@@ -15,12 +19,20 @@ class Shape {
     this._color = color;
   }
 
+  set id(id) {
+    this._id = id;
+  }
+
   get shape() {
     return this._shape;
   }
 
   get color() {
     return this._color;
+  }
+
+  get id() {
+    return this._id;
   }
 
   getInfo() {
@@ -31,7 +43,7 @@ class Shape {
     const paragraph = document.createElement("p");
 
     // Filling the paragraph with content
-    paragraph.textContent = `${this.shape} ${this.color}`;
+    paragraph.textContent = `Shape ${this.id}: ${this.shape} ${this.color}`;
 
     // Clearing the section shape-info
     shapeInfoSection.innerHTML = "";
