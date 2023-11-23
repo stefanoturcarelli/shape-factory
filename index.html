@@ -7,12 +7,42 @@
 	<title>Shape Factory</title>
 	<script type="module" src="./assets/script/app.js"></script>
 	<link rel="stylesheet" href="./assets/style/index.css">
+
+	<!-- Google Fonts Inter Designed by Rasmus Andersson -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
 	<main>
 		<div class="container">
-			<h1>Shape Factory</h1>
+			<section>
+				<h1>Shape Factory</h1>
+			</section>
+			<section>
+				<div>
+					<form>
+						<select class="shape-selector" name="shape" id="shape">
+							<option value="circle">Circle</option>
+							<option value="square">Square</option>
+						</select>
+						<select class="color-selector" name="color" id="color">
+							<option value="09f">Blue</option>
+							<option value="9f0">Green</option>
+							<option value="f90">Orange</option>
+							<option value="f09">Pink</option>
+							<option value="90f">Purple</option>
+						</select>
+						<input class="create" type="button" value="Create">
+					</form>
+				</div>
+			</section>
+			<section class="shapes">
+				<div class="circle"></div>
+				<div class="square"></div>
+			</section>
 		</div>
 	</main>
 </body>

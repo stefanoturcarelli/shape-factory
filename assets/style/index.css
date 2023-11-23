@@ -119,3 +119,65 @@ a {
 /* ! ------------------------------------------------------------------------ */
 /* !                                 CONTENT                                  */
 /* ! ------------------------------------------------------------------------ */
+
+:root {
+  --app-border-radius: 0.4rem;
+  --app-border: 0.1rem solid #444;
+}
+
+body {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+select + select,
+input {
+  margin-left: 1.5rem;
+}
+
+select {
+  padding: 0 1.2rem;
+  width: 23rem;
+  height: 4.6rem;
+  border: var(--app-border);
+  border-radius: var(--app-border-radius);
+}
+
+.create {
+  background-color: #ffa500;
+  color: #fff;
+  padding: 0 1.2rem;
+  width: 12.5rem;
+  height: 4.6rem;
+  border: var(--app-border);
+  border-radius: var(--app-border-radius);
+}
+
+.shapes {
+  background-color: #000;
+  width: 100rem;
+  height: 80rem;
+  border: var(--app-border);
+  border-radius: var(--app-border-radius);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  place-items: center;
+}
+
+.circle {
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.square {
+  width: 10rem;
+  height: 10rem;
+  background-color: white;
+}
+
