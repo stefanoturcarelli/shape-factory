@@ -1,11 +1,20 @@
 let shapeCount = 0;
 
+// Map color codes to color names
+const colorMap = {
+  "09f": "Blue",
+  "9f0": "Green",
+  "f90": "Orange",
+  "f09": "Pink",
+  "90f": "Purple",
+};
+
 class Shape {
   _shape;
   _color;
   _id;
 
-  constructor(shape, color, id) {
+  constructor(shape, color) {
     this.shape = shape;
     this.color = color;
     this.id = ++shapeCount;
@@ -42,8 +51,11 @@ class Shape {
     // Creating a paragraph
     const paragraph = document.createElement("p");
 
+    // Getting the color name from the colorMap
+    const colorName = colorMap[this.color];
+
     // Filling the paragraph with content
-    paragraph.textContent = `Shape ${this.id}: ${this.shape} ${this.color}`;
+    paragraph.textContent = `Shape ${this.id}: ${colorName} ${this.shape}`;
 
     // Clearing the section shape-info
     shapeInfoSection.innerHTML = "";
