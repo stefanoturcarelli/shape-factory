@@ -2,21 +2,21 @@ class Shape {
   _shape;
   _color;
 
-  constructor(shape, color) {
+  constructor(shape = "circle", color = "blue") {
     this.shape = shape;
     this.color = color;
   }
 
-  set name(name) {
-    this._name = name;
+  set shape(shape) {
+    this._shape = shape;
   }
 
   set color(color) {
     this._color = color;
   }
 
-  get name() {
-    return this._name;
+  get shape() {
+    return this._shape;
   }
 
   get color() {
@@ -24,7 +24,7 @@ class Shape {
   }
 
   getInfo() {
-    return `${this.color} ${this.name}`;
+    return `${this.color} ${this.shape}`;
   }
 }
 
