@@ -131,6 +131,21 @@ body {
   text-align: center;
 }
 
+main {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 3rem;
+}
+
 section {
   margin-bottom: 1.5rem;
 }
@@ -175,7 +190,7 @@ select {
 .shapes > div {
   grid-column: span 1;
   grid-row: span 1;
-  opacity: 0; 
+  opacity: 0;
   animation: fadeInFromTop 0.5s ease-out forwards;
   transform-origin: top center;
 }
@@ -204,4 +219,8 @@ select {
   height: 15rem;
   background-color: white;
   cursor: pointer;
+}
+
+.shape-info {
+  height: 5rem;
 }
