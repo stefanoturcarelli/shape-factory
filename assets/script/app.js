@@ -60,3 +60,26 @@ onEvent("click", createBtn, () => {
   // Save the new object in an array
   // Add a new shape (div) to the grid
 });
+
+// getInfo() {
+//   // Getting and storing the section shape-info
+//   const shapeInfoSection = document.querySelector(".shape-info");
+
+//   // Creating a paragraph
+//   const paragraph = document.createElement("p");
+
+//   // Getting the selected color name from the color selector
+//   const colorSelector = document.querySelector(".color-selector");
+//   const selectedColorOption =
+//     colorSelector.options[colorSelector.selectedIndex];
+//   const colorName = selectedColorOption.textContent;
+
+//   // Filling the paragraph with content
+//   paragraph.textContent = `Shape ${this.id}: ${colorName} ${this.shape}`;
+
+//   // Clearing the section shape-info
+//   shapeInfoSection.innerHTML = "";
+
+//   // Appending the paragraph to the section shape-info
+//   shapeInfoSection.appendChild(paragraph);
+// }
