@@ -19,6 +19,11 @@ const colorSelector = select(".color-selector");
 const shapeInfoSection = select(".shape-info");
 
 const shapesArray = [];
+let count = 0;
+
+// data-attribute
+
+let index = 0;
 
 let numberOfShapes = 0;
 
@@ -47,7 +52,7 @@ function createShape() {
     shapesArray.push(shape);
 
     onEvent("click", newDiv, () => {
-      shape.getInfo();
+      getInfo();
     });
   } else {
     shapeInfoSection.innerHTML = "<p>Storage Full</p>";
@@ -61,9 +66,7 @@ onEvent("click", createBtn, () => {
   // Add a new shape (div) to the grid
 });
 
-// getInfo() {
-//   // Getting and storing the section shape-info
-//   const shapeInfoSection = document.querySelector(".shape-info");
+function getInfo() {}
 
 //   // Creating a paragraph
 //   const paragraph = document.createElement("p");
@@ -83,3 +86,5 @@ onEvent("click", createBtn, () => {
 //   // Appending the paragraph to the section shape-info
 //   shapeInfoSection.appendChild(paragraph);
 // }
+
+// shapeInfoSection.innerHTML = `<p>${this.shape} ${this.color}</p>`;
